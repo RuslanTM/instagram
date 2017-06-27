@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - instagram@localhost" uuid="a65a1bce-0ddd-435b-805e-42df3819f1f9">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>instagram.*</schema-pattern>
+      <default-schemas>instagram.pg_catalog instagram.public</default-schemas>
+    </data-source>
+  </component>
+</project>
