@@ -10,9 +10,7 @@ public class Person implements Serializable {
     public Person() {
 
     }
-
     public Person(String name, String login, String sex) {
-        this.id = 5;
         this.name = name;
         this.login = login;
         this.sex = sex;
@@ -21,7 +19,7 @@ public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "PERSON_ID", nullable = false)
+    @Column(name = "PERSON_ID", unique = true, nullable = false)
     private long id;
 
     @Column(name = "PERSON_NAME", nullable = false)

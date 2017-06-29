@@ -1,13 +1,18 @@
-Create TABLE Person (
-  person_id       INT          NOT NULL PRIMARY KEY,
-  person_name     VARCHAR(100) NOT NULL,
-  person_login    VARCHAR(20)  NOT NULL,
-  SEX             VARCHAR(1)   NOT NULL,
-  REGISTERED_DATE DATE         NOT NULL,
-  ADDITIONAL_INFO VARCHAR(200),
-  PERSON_BIRTHDAY DATE,
-  PHONE_NUM       VARCHAR(30)
-);
+--DROP TABLE publication;
+--DROP TABLE person;
+
+CREATE TABLE person
+(
+  person_id SERIAL NOT NULL,
+  person_name character varying(100) NOT NULL,
+  person_login character varying(20) NOT NULL,
+  sex character varying(1) NOT NULL,
+  registered_date date NOT NULL,
+  additional_info character varying(200),
+  person_birthday date,
+  phone_num character varying(30),
+  CONSTRAINT person_pkey PRIMARY KEY (person_id)
+)
 
 
 

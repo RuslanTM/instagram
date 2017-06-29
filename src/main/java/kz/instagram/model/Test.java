@@ -2,16 +2,17 @@ package kz.instagram.model;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-//import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-//import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistry;
 
 
-import javax.imageio.spi.ServiceRegistry;
+import java.util.Date;
 import java.util.List;
 
 public class Test {
-/*
+
     private static SessionFactory sessionFactory;
     private static ServiceRegistry serviceRegistry;
 
@@ -28,7 +29,7 @@ public class Test {
 
 
     public static void main(String[] args) {
-      *//*  init();
+       init();
 
         Session s = sessionFactory.getCurrentSession();
         s.beginTransaction();
@@ -36,27 +37,33 @@ public class Test {
         s.getTransaction().commit();
 
         for (Person p : personList) {
-            System.out.print("Person name:" + p.getName());
+            System.out.print("Person name1:" + p.getName());
 
         }
 
-        destroy();*//*
+        destroy();
 
         SessionFactory sessionFactory = new Configuration().configure()
                 .buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
 //
-//        Person person = new Person("test", "test", "W");
-//        session.save(person);
-        List<Person> personList = session.createQuery("from Person").list();
+        Person person = new Person();
+      //  person.setId(10);
+        person.setLogin("TEST");
+        person.setName("TEST");
+        person.setRegisteredDate(new Date());
+        person.setSex("W");
+
+       session.save(person);
+        List<Person> personList2 = session.createQuery("from Person").list();
         session.getTransaction().commit();
 
-        for (Person p : personList) {
+        for (Person p : personList2) {
             System.out.println("Person name:" + p.getName());
 
         }
     //    session.getTransaction().commit();
         session.close();
-    }*/
+    }
 }
